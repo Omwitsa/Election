@@ -1,0 +1,44 @@
+<div class="limiter">
+  <div class="container">
+    <div class="wrap-login">
+      <form (ngSubmit)="onSubmit()">
+        <span class="login-form-logo"></span>
+        <span class="login-form-title">Login</span>
+        <div ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required}" >
+          <input class="input" [(ngModel)]="user.userName" type="text" name="username" placeholder="Username">
+          <span class="focus-input" data-placeholder="&#xf207;"></span>
+        </div>
+
+        <div ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+          <input class="input" [(ngModel)]="user.password" type="password" required name="pass" placeholder="Password">
+          <span class="focus-input" data-placeholder="&#xf191;"></span>
+        </div>
+
+        <div class="contact-form-checkbox">
+          <input class="input-checkbox" id="ckb" type="checkbox" name="remember-me">
+          <label class="label-checkbox" for="ckb">
+            Remember me
+          </label>
+        </div>
+
+        <div class="container-login-form-btn">
+          <button class="login-form-btn">
+            Login
+          </button>
+        </div>
+
+        <div class="textarea">
+          <a [routerLink]='["/reset-password"]'>
+            Forgot Password?
+          </a>
+        </div>
+
+        <div class="textarea">
+          <a [routerLink]='["/create-account"]'>
+            Create An account
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
